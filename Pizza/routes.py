@@ -3,13 +3,11 @@ from Pizza.models import pizza, Customer_Order
 from flask import Flask, render_template
 
 @app.route('/', methods=["GET","Post"])
-def home():
-    if request.method == "POST":
-        print(saj)
-
+def user_order():
 
     return render_template("home.html")
 
+@app.route('user', methods=["GET","Post"])
 
 
 

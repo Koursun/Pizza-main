@@ -1,0 +1,26 @@
+{% extends "trueHome.html" %}
+
+{% block title %}
+yay
+{% endblock %}
+
+{% block body %}
+<h1>hi</h1>
+<table>
+    <thead>
+       <tr>
+          <th>Name</th>
+          <th>active</th>
+       </tr>
+    </thead>
+
+    <tbody>
+       {% for user in results %}
+          <tr>
+             <td>{{ user.name }}</td>
+             <td>{{ user.active }}</td>
+          </tr>
+       {% endfor %}
+    </tbody> 
+
+{% endblock %}

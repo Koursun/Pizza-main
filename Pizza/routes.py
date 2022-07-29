@@ -14,7 +14,6 @@ def user():  #this should work as both a login and register
         print("first print "+user)
         on = False #when the user is tagging the name, we make the user inactive.
         name = customer.query.filter_by(name=user).first()
-        print (name)
         print ("first print")
         if name:
             print (name.active)
@@ -38,6 +37,8 @@ def user():  #this should work as both a login and register
             new_customer = customer()
             new_customer.name = user
             new_customer.active = on
+
+            session["Current_Customer"] = new_customer
 
             db.session.add(new_customer)
             print (new_customer)
@@ -64,12 +65,19 @@ def menu():
 def cart():
     if request.method == "POST":
         print ("cart")
+
+        user = session["Current_Customer"]
         id = request.form.get("pizzaid")
         print (id)
+
         pizz = customer()
         pizz.pizza_id = id
-        db.session.add(pizz)
+        pizz.name = user.name
         db.session.commit()
+        print(hi)
+
+
+
 
 @app.route('/admin', methods=["GET","Post"])
 def admin():

@@ -14,4 +14,7 @@ class pizza(db.Model):
     name = db.Column(db.String(25))
     price = db.Column(db.Integer)
     
+class c_order(db.Model):
+    customer_id = db.Column(db.Integer, db.ForeignKey("customer.id"), primary_key = True)
+    pizza_id = db.Column(db.Integer, db.ForeignKey("pizza.id"))
 

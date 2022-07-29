@@ -1,0 +1,19 @@
+{% extends "trueHome.html" %}
+
+{% block title %}
+Pizza menu
+{% endblock %}
+
+{% block body %}
+<h1>Pick your pizza here!!!</h1>
+    {% for pizza in results %}
+    <div class="box">
+        <p>{{ pizza.name }}</p>
+        <p>{{ pizza.price }}</p>
+        <form action="/cart" method="post" required>
+            <input type="hidden" name="pizzaid" value="{{ pizza.id }}">
+            <input type="submit" value="cart" required>
+    </div>
+ 
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,38 @@
+html{
+	background-color:#fff0f0;
+
+	font-family: Garamond, Arial, sans-serif, Comic Sans MS, Comic Sans, cursive;
+}
+
+
+#wrapper{
+	margin:0 auto;
+	max-width:95%
+
+}
+
+.container-1 div{ 
+    border: 2px #ccc;
+    
+
+}
+
+.flex-item {
+    display: flex;
+    padding: 10px;
+    align-items: stretch;
+    flex-wrap: wrap;
+    align-content: stretch;
+    gap: 10px 30px;
+    margin: 10px;
+    align-self: baseline;
+   }
+   
+
+.box {
+    border:1px #ccc solid;
+    padding: 10px;
+    background-color: rgb(189, 243, 188);
+}
+
+
